@@ -31,74 +31,9 @@ To write a program for mean, variance and cross correlation in SCILAB and verify
 .Verify the generated results
 
 # PROGRAM
-~~~
-function z = f(x)
-    z = 2 * (1 - x)^2;
-endfunction
 
-a = 0;
-b = 1;
-
-function z = fx(x)
-    z = x * 2 * (1 - x)^2;
-endfunction
-
-EX = intg(a, b, fx);
-disp("Mean of X = ");
-disp(EX);
-
-function z = g(y)
-    z = 2 * (1 - y)^2;
-endfunction
-
-function z = fy(y)
-    z = y * 2 * (1 - y)^2;
-endfunction
-
-EY = intg(a, b, fy);
-disp("Mean of Y = ");
-disp(EY);
-
-function z = g(x)
-    z = x^2 * 2 * (1 - x)^2;
-endfunction
-
-a = 0;
-b = 1;
-
-EX2 = intg(a, b, g);
-
-function z = h(y)
-    z = y^2 * 2 * (1 - y)^2;
-endfunction
-
-EY2 = intg(a, b, h);
-
-vX2 = EX2 - (EX)^2;
-vY2 = EY2 - (EY)^2;
-
-disp("Variance of X = ");
-disp(vX2);
-
-disp("Variance of Y = ");
-disp(vY2);
-
-x= input("type in the reference sequence=");
-y= input("type in the second sequence="); 
-n1=max(size(y))-1;
-
-n2=max(size(x))-1;
-
-r=corr(x,y,n1);
-
-plot2d3('gnn',r);
-~~~
+# TABULATION
 
 # OUTPUT WAVEFORM
 
-<img width="1076" height="864" alt="image" src="https://github.com/user-attachments/assets/9e42a4a4-de01-43ba-a654-b2da52f65695" />
-
-
-
 # RESULT
-Thus the mean , variance and cross correlation are executed in Scilab and output is verified.
